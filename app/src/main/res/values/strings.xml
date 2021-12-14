@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">CaclulatorMY</string>
+    
+    <string name="btn_one">1</string>
+    <string name="btn_two">2</string>
+    <string name="btn_tree">3</string>
+    <string name="btn_plus">+</string>
+    
+    <string name="btn_four">4</string>
+    <string name="btn_five">5</string>
+    <string name="btn_six">6</string>
+    <string name="btn_minus">-</string>
+    
+    <string name="btn_seven">7</string>
+    <string name="btn_eight">8</string>
+    <string name="btn_nine">9</string>
+    <string name="btn_multiplication_sign">x</string>
+
+    <string name="btn_c">c</string>
+    <string name="btn_back"> back</string>
+    <string name="btn_delete">/</string>
+
+    <string name="btn_plus_and_minus">+/-</string>
+    <string name="btn_null">0</string>
+    <string name="btn_comma">,</string>
+    <string name="btn_equal_sign">=</string>
+    <string name="_0">0</string>
+</resources>
