@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@color/light_steel_blue">
+    android:background="@color/light_steel_blue"
+    tools:context=".MainActivity">
 
     <Button
         android:id="@+id/btnC"
         android:layout_width="80dp"
         android:layout_height="50dp"
-        android:textSize="25sp"
         android:text="@string/btn_c"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/btnSeven"
         app:layout_constraintEnd_toStartOf="@+id/btnBack"
         app:layout_constraintHorizontal_bias="0.272"
@@ -25,15 +25,15 @@
         android:text="@string/btn_back"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/btnEight"
-        app:layout_constraintEnd_toStartOf="@+id/btnDelete"
+        app:layout_constraintEnd_toStartOf="@+id/btnDivision"
         app:layout_constraintStart_toEndOf="@+id/btnC" />
 
     <Button
-        android:id="@+id/btnDelete"
+        android:id="@+id/btnDivision"
         android:layout_width="80dp"
         android:layout_height="50dp"
-        android:textSize="25sp"
         android:text="@string/btn_delete"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/btnNine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnBack" />
@@ -42,8 +42,8 @@
         android:id="@+id/btnSeven"
         android:layout_width="80dp"
         android:layout_height="50dp"
-        android:textSize="25sp"
         android:text="@string/btn_seven"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/btnFour"
         app:layout_constraintEnd_toStartOf="@+id/btnEight"
         app:layout_constraintStart_toStartOf="parent" />
@@ -62,19 +62,19 @@
         android:id="@+id/btnNine"
         android:layout_width="80dp"
         android:layout_height="50dp"
-        android:textSize="25sp"
         android:text="@string/btn_nine"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/btnSix"
-        app:layout_constraintEnd_toStartOf="@+id/btnMultiplicationSign"
+        app:layout_constraintEnd_toStartOf="@+id/btnMultiplication"
         app:layout_constraintStart_toEndOf="@+id/btnEight" />
 
     <Button
-        android:id="@+id/btnMultiplicationSign"
+        android:id="@+id/btnMultiplication"
         android:layout_width="80dp"
         android:layout_height="50dp"
-        android:textSize="25sp"
         android:text="@string/btn_multiplication_sign"
-        app:layout_constraintBottom_toTopOf="@+id/btnMinus"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSubtraction"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnNine" />
 
@@ -82,8 +82,8 @@
         android:id="@+id/btnFour"
         android:layout_width="80dp"
         android:layout_height="50dp"
-        android:textSize="25sp"
         android:text="@string/btn_four"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/btnOne"
         app:layout_constraintEnd_toStartOf="@+id/btnFive"
         app:layout_constraintStart_toStartOf="parent" />
@@ -92,8 +92,8 @@
         android:id="@+id/btnFive"
         android:layout_width="80dp"
         android:layout_height="50dp"
-        android:textSize="25sp"
         android:text="@string/btn_five"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/btnTwo"
         app:layout_constraintEnd_toStartOf="@+id/btnSix"
         app:layout_constraintStart_toEndOf="@+id/btnFour" />
@@ -102,30 +102,30 @@
         android:id="@+id/btnSix"
         android:layout_width="80dp"
         android:layout_height="50dp"
-        android:textSize="25sp"
         android:text="@string/btn_six"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/btnTree"
-        app:layout_constraintEnd_toStartOf="@+id/btnMinus"
+        app:layout_constraintEnd_toStartOf="@+id/btnSubtraction"
         app:layout_constraintStart_toEndOf="@+id/btnFive" />
 
     <Button
-        android:id="@+id/btnMinus"
+        android:id="@+id/btnSubtraction"
         android:layout_width="80dp"
         android:layout_height="50dp"
-        android:textSize="25sp"
         android:text="@string/btn_minus"
-        app:layout_constraintBottom_toTopOf="@+id/btnPlus"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddition"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnSix" />
 
     <Button
         android:id="@+id/btnOne"
-        android:inputType="number"
         android:layout_width="80dp"
         android:layout_height="50dp"
-        android:textSize="25sp"
+        android:inputType="number"
         android:text="@string/btn_one"
-        app:layout_constraintBottom_toTopOf="@+id/btnPlusAndMinus"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnPlusMinus"
         app:layout_constraintEnd_toStartOf="@+id/btnTwo"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -133,8 +133,8 @@
         android:id="@+id/btnTwo"
         android:layout_width="80dp"
         android:layout_height="50dp"
-        android:textSize="25sp"
         android:text="@string/btn_two"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/btnNull"
         app:layout_constraintEnd_toStartOf="@+id/btnTree"
         app:layout_constraintStart_toEndOf="@+id/btnOne" />
@@ -143,24 +143,24 @@
         android:id="@+id/btnTree"
         android:layout_width="80dp"
         android:layout_height="50dp"
-        android:textSize="25sp"
         android:text="@string/btn_tree"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/btnComma"
-        app:layout_constraintEnd_toStartOf="@+id/btnPlus"
+        app:layout_constraintEnd_toStartOf="@+id/btnAddition"
         app:layout_constraintStart_toEndOf="@+id/btnTwo" />
 
     <Button
-        android:id="@+id/btnPlus"
+        android:id="@+id/btnAddition"
         android:layout_width="80dp"
         android:layout_height="50dp"
-        android:textSize="25sp"
         android:text="@string/btn_plus"
-        app:layout_constraintBottom_toTopOf="@+id/btnEqualSign"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnEqual"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnTree" />
 
     <Button
-        android:id="@+id/btnPlusAndMinus"
+        android:id="@+id/btnPlusMinus"
         android:layout_width="80dp"
         android:layout_height="50dp"
         android:text="@string/btn_plus_and_minus"
@@ -177,42 +177,42 @@
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnComma"
-        app:layout_constraintStart_toEndOf="@+id/btnPlusAndMinus"
+        app:layout_constraintStart_toEndOf="@+id/btnPlusMinus"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Button
         android:id="@+id/btnComma"
         android:layout_width="80dp"
         android:layout_height="50dp"
-        android:textSize="25sp"
         android:text="@string/btn_comma"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnEqualSign"
+        app:layout_constraintEnd_toStartOf="@+id/btnEqual"
         app:layout_constraintStart_toEndOf="@+id/btnNull" />
 
     <Button
-        android:inputType="number"
-        android:id="@+id/btnEqualSign"
+        android:id="@+id/btnEqual"
         android:layout_width="80dp"
         android:layout_height="50dp"
-        android:textSize="25sp"
+        android:inputType="number"
         android:text="@string/btn_equal_sign"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnComma" />
 
     <TextView
-
-        android:id="@+id/tvResult"
+        android:id="@+id/tvMathExpression"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@color/light_steel_blue"
-        android:text="@string/_0"
+        android:text=""
         android:textSize="50sp"
+        app:flow_verticalBias="0.2"
         app:layout_constraintBottom_toTopOf="@+id/btnBack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
