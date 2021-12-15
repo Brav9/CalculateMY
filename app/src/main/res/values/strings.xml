@@ -21,7 +21,7 @@
     <string name="btn_delete">/</string>
 
     <string name="btn_plus_and_minus">+/-</string>
-    <string name="btn_null">0</string>
+    <string name="btn_zero">0</string>
     <string name="btn_comma">,</string>
     <string name="btn_equal_sign">=</string>
     <string name="_0">0</string>

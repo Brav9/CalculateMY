@@ -1,7 +1,9 @@
 package com.hfad.caclulatormy;
 
-public class Presenter implements IContact.IPresenter {
+import android.widget.TextView;
 
+public class Presenter implements IContact.IPresenter {
+    TextView tvMathExpression;
     IContact.IView myMVPView;
     IContact.IModel myMVPModel;
 
@@ -13,5 +15,10 @@ public class Presenter implements IContact.IPresenter {
     @Override
     public void CalcResult() {
 
+    }
+
+    @Override
+    public void inputNumberZero() {
+        tvMathExpression.setText(tvMathExpression.getText() + "0");
     }
 }

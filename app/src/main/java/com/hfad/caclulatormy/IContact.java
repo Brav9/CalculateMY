@@ -14,5 +14,6 @@ public interface IContact {
 
     interface IPresenter {
         void CalcResult();
+        void inputNumberZero();
     }
 }
