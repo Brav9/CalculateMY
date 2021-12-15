@@ -120,6 +120,7 @@
 
     <Button
         android:id="@+id/btnOne"
+        android:inputType="number"
         android:layout_width="80dp"
         android:layout_height="50dp"
         android:textSize="25sp"
@@ -190,6 +191,7 @@
         app:layout_constraintStart_toEndOf="@+id/btnNull" />
 
     <Button
+        android:inputType="number"
         android:id="@+id/btnEqualSign"
         android:layout_width="80dp"
         android:layout_height="50dp"
@@ -200,6 +202,7 @@
         app:layout_constraintStart_toEndOf="@+id/btnComma" />
 
     <TextView
+
         android:id="@+id/tvResult"
         android:layout_width="match_parent"
         android:layout_height="0dp"

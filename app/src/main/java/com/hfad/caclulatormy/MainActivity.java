@@ -2,13 +2,14 @@ package com.hfad.caclulatormy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+
 public class MainActivity extends AppCompatActivity implements IContact.IView {
+    IContact.IPresenter myMVPPresenter;
 
     Button btnC;
     Button btnBack;
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
         btnSeven = findViewById(R.id.btnSeven);
         btnEight = findViewById(R.id.btnEight);
         btnNine = findViewById(R.id.btnNine);
-        btnMultiplicationSign =findViewById(R.id.btnMultiplicationSign);
+        btnMultiplicationSign = findViewById(R.id.btnMultiplicationSign);
         btnFour = findViewById(R.id.btnFour);
         btnFive = findViewById(R.id.btnFive);
         btnSix = findViewById(R.id.btnSix);
@@ -58,7 +59,69 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
         btnEqualSign = findViewById(R.id.btnEqualSign);
         tvResult = findViewById(R.id.tvResult);
 
+        myMVPPresenter = new Presenter(this);
 
+        btnOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvResult.setText(tvResult.getText() + "1");
+            }
+        });
+
+        btnTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvResult.setText(tvResult.getText() + "2");
+            }
+        });
+        btnTree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvResult.setText(tvResult.getText() + "3");
+            }
+        });
+
+        btnFour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvResult.setText(tvResult.getText() + "4");
+            }
+        });
+
+        btnFive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvResult.setText(tvResult.getText() + "5");
+            }
+        });
+
+        btnSix.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvResult.setText(tvResult.getText() + "6");
+            }
+        });
+
+        btnSeven.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvResult.setText(tvResult.getText() + "7");
+            }
+        });
+
+        btnEight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvResult.setText(tvResult.getText() + "8");
+            }
+        });
+
+        btnNine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvResult.setText(tvResult.getText() + "9");
+            }
+        });
     }
 
     @Override
