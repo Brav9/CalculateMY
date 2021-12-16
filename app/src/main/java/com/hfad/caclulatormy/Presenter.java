@@ -3,7 +3,9 @@ package com.hfad.caclulatormy;
 import android.widget.TextView;
 
 public class Presenter implements IContact.IPresenter {
-    TextView tvMathExpression;
+    float valueNumberOne;
+    float valueNumberTwo;
+
     IContact.IView myMVPView;
     IContact.IModel myMVPModel;
 
@@ -13,12 +15,18 @@ public class Presenter implements IContact.IPresenter {
     }
 
     @Override
-    public void CalcResult() {
-
+        public void onButtonWasClicked(TextView tvMathExpression) {
+        String numberZero = myMVPModel.inputNumberZero();
+        myMVPView.showResult(numberZero);
     }
 
-    @Override
-    public void inputNumberZero() {
-        tvMathExpression.setText(tvMathExpression.getText() + "0");
-    }
+    // String resCalculated = myMVPModel.calculate();
+    //   myMVPView.showResult(resCalculated);
+    //  try {
+//
+    //  } catch (NullPointerException exception) {
+    //   }
 }
+
+
+

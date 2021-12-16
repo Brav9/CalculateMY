@@ -67,8 +67,9 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
         btnZero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myMVPPresenter.inputNumberZero();
-               // tvMathExpression.setText(tvMathExpression.getText() + "0");
+
+                myMVPPresenter.onButtonWasClicked(tvMathExpression);
+                // tvMathExpression.setText(tvMathExpression.getText() + "0");
 
             }
         });
@@ -253,7 +254,7 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
     }
 
     @Override
-    public void showResult() {
-
+    public void showResult(String resCalculated) {
+        tvMathExpression.setText(resCalculated);
     }
 }

@@ -1,19 +1,28 @@
 package com.hfad.caclulatormy;
 
+import android.widget.TextView;
+
 public interface IContact {
     interface IView {
         void showError();
+
         void hideError();
-        void showResult();
+
+        void showResult(String resCalculated);
     }
 
     interface IModel {
         void updateInfo();
-        void  calculate();
+
+        String inputNumberZero();
+
+        String calculate();
+
     }
 
     interface IPresenter {
-        void CalcResult();
-        void inputNumberZero();
+
+        void onButtonWasClicked(TextView tvMathExpression);
+
     }
 }
