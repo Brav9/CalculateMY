@@ -1,9 +1,7 @@
 package com.hfad.caclulatormy;
 
-import android.widget.TextView;
-
 public class Model implements IContact.IModel {
-    //Symbol symbol = null;
+
 
     @Override
     public void updateInfo() {
@@ -11,30 +9,55 @@ public class Model implements IContact.IModel {
     }
 
     @Override
-    public String inputNumber() {
-
-
-
-
-        //try {
-        //    switch (symbol) {
-        //        case ZERO:
-         //           return "0";
-         //       case ONE:
-         //           return "1";
-         //       case TWO:
-         //           return "2";
-         //       case TREE:
-        //        case FOUR:
-        //        case FIVE:
-        //        case SIX:
-        //        case SEVEN:
-        //        case EIGHT:
-       //         case NINE:
-      //      }
-     //   } catch (NullPointerException e) {}
-        return null;
+    public String inputNumberZero() {
+        return "0";
     }
+
+    @Override
+    public String inputNumberOne() {
+        return "1";
+    }
+
+    @Override
+    public String inputNumberTwo() {
+        return "2";
+    }
+
+    @Override
+    public String inputNumberTree() {
+        return "3";
+    }
+
+    @Override
+    public String inputNumberFour() {
+        return "4";
+    }
+
+    @Override
+    public String inputNumberFive() {
+        return "5";
+    }
+
+    @Override
+    public String inputNumberSix() {
+        return "6";
+    }
+
+    @Override
+    public String inputNumberSeven() {
+        return "7";
+    }
+
+    @Override
+    public String inputNumberEight() {
+        return "8";
+    }
+
+    @Override
+    public String inputNumberNine() {
+        return "9";
+    }
+
 
     @Override
     public String calculate() {

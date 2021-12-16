@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
     float mathValueTwo;
 
     Operation operation = null;
-    //Symbol symbol = null;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,18 +67,17 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
         btnZero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myMVPPresenter.onButtonWasClickedZero();
-               //symbol = Symbol.ZERO;
-                // tvMathExpression.setText(tvMathExpression.getText() + "0");
 
+                myMVPPresenter.onButtonWasClickedZero();
+
+                // tvMathExpression.setText(tvMathExpression.getText() + "0");
             }
         });
 
         btnOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myMVPPresenter.onButtonWasClickedZero();
-
+                myMVPPresenter.onButtonWasClickedOne();
                 //tvMathExpression.setText(tvMathExpression.getText() + "1");
             }
         });
@@ -88,55 +85,63 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
         btnTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvMathExpression.setText(tvMathExpression.getText() + "2");
+                myMVPPresenter.onButtonWasClickedTwo();
+                //tvMathExpression.setText(tvMathExpression.getText() + "2");
             }
         });
         btnTree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvMathExpression.setText(tvMathExpression.getText() + "3");
+                myMVPPresenter.onButtonWasClickedTree();
+                //tvMathExpression.setText(tvMathExpression.getText() + "3");
             }
         });
 
         btnFour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvMathExpression.setText(tvMathExpression.getText() + "4");
+                myMVPPresenter.onButtonWasClickedFour();
+                //tvMathExpression.setText(tvMathExpression.getText() + "4");
             }
         });
 
         btnFive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvMathExpression.setText(tvMathExpression.getText() + "5");
+                myMVPPresenter.onButtonWasClickedFive();
+                //tvMathExpression.setText(tvMathExpression.getText() + "5");
             }
         });
 
         btnSix.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvMathExpression.setText(tvMathExpression.getText() + "6");
+                myMVPPresenter.onButtonWasClickedSix();
+                //tvMathExpression.setText(tvMathExpression.getText() + "6");
             }
         });
 
         btnSeven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvMathExpression.setText(tvMathExpression.getText() + "7");
+                myMVPPresenter.onButtonWasClickedSeven();
+                //tvMathExpression.setText(tvMathExpression.getText() + "7");
             }
         });
 
         btnEight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvMathExpression.setText(tvMathExpression.getText() + "8");
+                myMVPPresenter.onButtonWasClickedEight();
+                //tvMathExpression.setText(tvMathExpression.getText() + "8");
             }
         });
 
         btnNine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvMathExpression.setText(tvMathExpression.getText() + "9");
+                myMVPPresenter.onButtonWasClickedNine();
+                //tvMathExpression.setText(tvMathExpression.getText() + "9");
             }
         });
 

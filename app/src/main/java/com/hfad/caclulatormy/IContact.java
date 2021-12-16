@@ -14,7 +14,16 @@ public interface IContact {
     interface IModel {
         void updateInfo();
 
-        String inputNumber();
+        String inputNumberZero();
+        String inputNumberOne();
+        String inputNumberTwo();
+        String inputNumberTree();
+        String inputNumberFour();
+        String inputNumberFive();
+        String inputNumberSix();
+        String inputNumberSeven();
+        String inputNumberEight();
+        String inputNumberNine();
 
         String calculate();
 

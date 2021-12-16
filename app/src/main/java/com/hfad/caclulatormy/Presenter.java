@@ -1,7 +1,9 @@
 package com.hfad.caclulatormy;
 
-public class Presenter implements IContact.IPresenter {
+import android.util.Log;
 
+public class Presenter implements IContact.IPresenter {
+    String i;
     Symbol symbol = null;
 
     IContact.IView myMVPView;
@@ -10,6 +12,7 @@ public class Presenter implements IContact.IPresenter {
     public Presenter(IContact.IView myMVPView) {
         this.myMVPView = myMVPView;
         this.myMVPModel = new Model();
+        Symbol symbol = null;
     }
 
     @Override
@@ -22,7 +25,6 @@ public class Presenter implements IContact.IPresenter {
     public void onButtonWasClickedOne() {
         symbol = Symbol.ONE;
         selectionSymbol();
-
     }
 
     @Override
@@ -75,9 +77,48 @@ public class Presenter implements IContact.IPresenter {
 
     @Override
     public void selectionSymbol() {
-
-        String numberBtn = myMVPModel.inputNumber();
-        myMVPView.showResult(numberBtn);
+        switch (symbol) {
+            case ZERO:
+                String numberZero = myMVPModel.inputNumberZero();
+                myMVPView.showResult(numberZero);
+                break;
+            case ONE:
+                String numberOne = myMVPModel.inputNumberOne();
+                myMVPView.showResult(numberOne);
+                break;
+            case TWO:
+                String numberTwo = myMVPModel.inputNumberTwo();
+                myMVPView.showResult(numberTwo);
+                break;
+            case TREE:
+                String numberTree = myMVPModel.inputNumberTree();
+                myMVPView.showResult(numberTree);
+                break;
+            case FOUR:
+                String numberFour = myMVPModel.inputNumberFour();
+                myMVPView.showResult(numberFour);
+                break;
+            case FIVE:
+                String numberFive = myMVPModel.inputNumberFive();
+                myMVPView.showResult(numberFive);
+                break;
+            case SIX:
+                String numberSix = myMVPModel.inputNumberSix();
+                myMVPView.showResult(numberSix);
+                break;
+            case SEVEN:
+                String numberSeven = myMVPModel.inputNumberSeven();
+                myMVPView.showResult(numberSeven);
+                break;
+            case EIGHT:
+                String numberEight = myMVPModel.inputNumberEight();
+                myMVPView.showResult(numberEight);
+                break;
+            case NINE:
+                String numberNine = myMVPModel.inputNumberNine();
+                myMVPView.showResult(numberNine);
+                break;
+        }
     }
 
     // String resCalculated = myMVPModel.calculate();
