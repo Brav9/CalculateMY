@@ -3,7 +3,7 @@ package com.hfad.caclulatormy;
 import android.widget.TextView;
 
 public class Model implements IContact.IModel {
-    TextView tvMathExpression;
+    //Symbol symbol = null;
 
     @Override
     public void updateInfo() {
@@ -11,9 +11,28 @@ public class Model implements IContact.IModel {
     }
 
     @Override
-    public String inputNumberZero() {
-         tvMathExpression.setText(tvMathExpression.getText() + "0");
+    public String inputNumber() {
 
+
+
+
+        //try {
+        //    switch (symbol) {
+        //        case ZERO:
+         //           return "0";
+         //       case ONE:
+         //           return "1";
+         //       case TWO:
+         //           return "2";
+         //       case TREE:
+        //        case FOUR:
+        //        case FIVE:
+        //        case SIX:
+        //        case SEVEN:
+        //        case EIGHT:
+       //         case NINE:
+      //      }
+     //   } catch (NullPointerException e) {}
         return null;
     }
 

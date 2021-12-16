@@ -14,7 +14,7 @@ public interface IContact {
     interface IModel {
         void updateInfo();
 
-        String inputNumberZero();
+        String inputNumber();
 
         String calculate();
 
@@ -22,7 +22,18 @@ public interface IContact {
 
     interface IPresenter {
 
-        void onButtonWasClicked(TextView tvMathExpression);
+        void onButtonWasClickedZero();
+        void onButtonWasClickedOne();
+        void onButtonWasClickedTwo();
+        void onButtonWasClickedTree();
+        void onButtonWasClickedFour();
+        void onButtonWasClickedFive();
+        void onButtonWasClickedSix();
+        void onButtonWasClickedSeven();
+        void onButtonWasClickedEight();
+        void onButtonWasClickedNine();
+
+        void selectionSymbol();
 
     }
 }

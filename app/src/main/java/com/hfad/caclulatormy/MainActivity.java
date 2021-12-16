@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
     float mathValueTwo;
 
     Operation operation = null;
+    //Symbol symbol = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,8 +69,8 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
         btnZero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                myMVPPresenter.onButtonWasClicked(tvMathExpression);
+                myMVPPresenter.onButtonWasClickedZero();
+               //symbol = Symbol.ZERO;
                 // tvMathExpression.setText(tvMathExpression.getText() + "0");
 
             }
@@ -77,7 +79,9 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
         btnOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvMathExpression.setText(tvMathExpression.getText() + "1");
+                myMVPPresenter.onButtonWasClickedZero();
+
+                //tvMathExpression.setText(tvMathExpression.getText() + "1");
             }
         });
 
@@ -255,6 +259,6 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
 
     @Override
     public void showResult(String resCalculated) {
-        tvMathExpression.setText(resCalculated);
+        tvMathExpression.setText(tvMathExpression.getText() + resCalculated);
     }
 }
