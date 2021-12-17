@@ -12,6 +12,7 @@ public enum Symbol {
     EIGHT,
     NINE,
     COMMA,
-    PLUS_MINUS
+    PLUS_MINUS,
+    CLEAN
 }
 

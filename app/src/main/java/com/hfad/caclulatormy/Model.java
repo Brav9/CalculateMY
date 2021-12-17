@@ -1,7 +1,7 @@
 package com.hfad.caclulatormy;
 
 public class Model implements IContact.IModel {
-    Operation operation = null;
+
 
     @Override
     public void updateInfo() {
@@ -33,32 +33,32 @@ public class Model implements IContact.IModel {
                 return "8";
             case NINE:
                 return "9";
+            case CLEAN:
+                return "";
             case PLUS_MINUS:
 
-                //float value = Float.parseFloat(tvMathExpression.getText().toString());
-               // if (value < 0) {
-                //    value = Math.abs(value);
-                //} else if (value > 0) {
-                //    value = value * -1;
-               // }
-              //  tvMathExpression.setText(String.valueOf(value));
+            //    float valueFirst = Float.parseFloat(tvMathExpression.getText().toString());
+            //    if (value < 0) {
+            //        valueFirst = Math.abs(value);
+            //    } else if (value > 0) {
+           //         valueFirst = value * -1;
+            //    }
+            //    tvMathExpression.setText(String.valueOf(valueFirst));
         }
         return null;
     }
 
+
     @Override
     public String inputOperation(Operation operation) {
-
         switch (operation) {
             case ADDICTION:
             case DIVISION:
             case SUBTRACTION:
             case MULTIPLICATION:
-            case CLEAN:
-                return "";
-            case BACK:
-              //  return newText;
 
+            case BACK:
+                //  return newText;
 
 
                 //if (text.length() > 0) {

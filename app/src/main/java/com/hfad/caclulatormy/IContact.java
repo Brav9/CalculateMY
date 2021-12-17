@@ -8,7 +8,9 @@ public interface IContact {
 
         void hideError();
 
-        void showResult(String resCalculated);
+        void showNumber(String resCalculated);
+        void showOperation();
+        void showResult();
     }
 
     interface IModel {

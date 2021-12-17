@@ -5,6 +5,5 @@ public enum Operation {
     MULTIPLICATION,
     SUBTRACTION,
     DIVISION,
-    CLEAN,
     BACK
 }

@@ -139,9 +139,7 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
         btnC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myMVPPresenter.onButtonWasClickedOperation(Operation.CLEAN);
-                // tvMathExpression.setText("");
-                //operation = null;
+                myMVPPresenter.onButtonWasClicked(Symbol.CLEAN);
             }
         });
 
@@ -261,11 +259,21 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
     }
 
     @Override
-    public void showResult(String resCalculated) {
+    public void showNumber(String resCalculated) {
         if (resCalculated.equals("")) {
             tvMathExpression.setText("");
         } else {
             tvMathExpression.setText(tvMathExpression.getText() + resCalculated);
         }
+    }
+
+    @Override
+    public void showOperation() {
+
+    }
+
+    @Override
+    public void showResult() {
+
     }
 }
