@@ -14,8 +14,14 @@ public class Presenter implements IContact.IPresenter {
 
     @Override
     public void onButtonWasClicked(Symbol symbol) {
-        String numberZero = myMVPModel.inputSymbol(symbol);
-        myMVPView.showResult(numberZero);
+        String number = myMVPModel.inputSymbol(symbol);
+        myMVPView.showResult(number);
+    }
+
+    @Override
+    public void onButtonWasClickedOperation(Operation operation) {
+        String operationSymbol = myMVPModel.inputOperation(operation);
+        myMVPView.showResult(operationSymbol);
     }
 
     @Override

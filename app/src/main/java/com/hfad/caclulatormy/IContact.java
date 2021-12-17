@@ -15,19 +15,8 @@ public interface IContact {
         void updateInfo();
 
         String inputSymbol(Symbol symbol);
+        String inputOperation(Operation operation);
 
-        // String inputNumberZero();
-       // String inputNumberOne();
-        //String inputNumberTwo();
-        //String inputNumberTree();
-        //String inputNumberFour();
-        //String inputNumberFive();
-        //String inputNumberSix();
-       // String inputNumberSeven();
-        //String inputNumberEight();
-        //String inputNumberNine();
-
-        String calculate();
 
     }
 
@@ -35,16 +24,7 @@ public interface IContact {
 
         void onButtonWasClicked(Symbol symbol);
 
-      //  void onButtonWasClickedZero();
-       // void onButtonWasClickedOne();
-       // void onButtonWasClickedTwo();
-       // void onButtonWasClickedTree();
-       // void onButtonWasClickedFour();
-       // void onButtonWasClickedFive();
-       // void onButtonWasClickedSix();
-      //  void onButtonWasClickedSeven();
-      //  void onButtonWasClickedEight();
-      //  void onButtonWasClickedNine();
+        void onButtonWasClickedOperation(Operation operation);
 
         void selectionSymbol();
 

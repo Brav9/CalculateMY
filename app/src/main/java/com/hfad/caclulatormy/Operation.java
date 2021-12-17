@@ -4,5 +4,7 @@ public enum Operation {
     ADDICTION,
     MULTIPLICATION,
     SUBTRACTION,
-    DIVISION
+    DIVISION,
+    CLEAN,
+    BACK
 }

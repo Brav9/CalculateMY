@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
     float mathValueOne;
     float mathValueTwo;
 
+    CharSequence text;
+
     Operation operation = null;
 
     @Override
@@ -67,10 +69,7 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
         btnZero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 myMVPPresenter.onButtonWasClicked(Symbol.ZERO);
-
-                // tvMathExpression.setText(tvMathExpression.getText() + "0");
             }
         });
 
@@ -78,7 +77,6 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
             @Override
             public void onClick(View v) {
                 myMVPPresenter.onButtonWasClicked(Symbol.ONE);
-                //tvMathExpression.setText(tvMathExpression.getText() + "1");
             }
         });
 
@@ -86,7 +84,6 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
             @Override
             public void onClick(View v) {
                 myMVPPresenter.onButtonWasClicked(Symbol.TWO);
-                //tvMathExpression.setText(tvMathExpression.getText() + "2");
             }
         });
 
@@ -94,7 +91,6 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
             @Override
             public void onClick(View v) {
                 myMVPPresenter.onButtonWasClicked(Symbol.TREE);
-                //tvMathExpression.setText(tvMathExpression.getText() + "3");
             }
         });
 
@@ -102,7 +98,6 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
             @Override
             public void onClick(View v) {
                 myMVPPresenter.onButtonWasClicked(Symbol.FOUR);
-                //tvMathExpression.setText(tvMathExpression.getText() + "4");
             }
         });
 
@@ -110,7 +105,6 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
             @Override
             public void onClick(View v) {
                 myMVPPresenter.onButtonWasClicked(Symbol.FIVE);
-                //tvMathExpression.setText(tvMathExpression.getText() + "5");
             }
         });
 
@@ -118,7 +112,6 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
             @Override
             public void onClick(View v) {
                 myMVPPresenter.onButtonWasClicked(Symbol.SIX);
-                //tvMathExpression.setText(tvMathExpression.getText() + "6");
             }
         });
 
@@ -126,7 +119,6 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
             @Override
             public void onClick(View v) {
                 myMVPPresenter.onButtonWasClicked(Symbol.SEVEN);
-                //tvMathExpression.setText(tvMathExpression.getText() + "7");
             }
         });
 
@@ -134,7 +126,6 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
             @Override
             public void onClick(View v) {
                 myMVPPresenter.onButtonWasClicked(Symbol.EIGHT);
-                //tvMathExpression.setText(tvMathExpression.getText() + "8");
             }
         });
 
@@ -142,29 +133,32 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
             @Override
             public void onClick(View v) {
                 myMVPPresenter.onButtonWasClicked(Symbol.NINE);
-                //tvMathExpression.setText(tvMathExpression.getText() + "9");
             }
         });
 
         btnC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvMathExpression.setText("");
-                //TODO operation = null;
-                operation = null;
-
+                myMVPPresenter.onButtonWasClickedOperation(Operation.CLEAN);
+                // tvMathExpression.setText("");
+                //operation = null;
             }
         });
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CharSequence text = tvMathExpression.getText();
+                text = tvMathExpression.getText();
                 if (text.length() > 0) {
                     int lastCharPosition = text.length();
                     CharSequence newText = text.subSequence(0, lastCharPosition - 1);
                     tvMathExpression.setText(newText);
+                    myMVPPresenter.onButtonWasClickedOperation(Operation.BACK);
                 }
+                //     int lastCharPosition = text.length();
+                //     CharSequence newText = text.subSequence(0, lastCharPosition - 1);
+                //     tvMathExpression.setText(newText);
+                //}
             }
         });
 
@@ -235,13 +229,16 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
         btnComma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvMathExpression.setText(tvMathExpression.getText() + ".");
+                myMVPPresenter.onButtonWasClicked(Symbol.COMMA);
+
             }
         });
 
         btnPlusMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                myMVPPresenter.onButtonWasClicked(Symbol.PLUS_MINUS);
+
                 float value = Float.parseFloat(tvMathExpression.getText().toString());
                 if (value < 0) {
                     value = Math.abs(value);
@@ -265,6 +262,10 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
 
     @Override
     public void showResult(String resCalculated) {
-        tvMathExpression.setText(tvMathExpression.getText() + resCalculated);
+        if (resCalculated.equals("")) {
+            tvMathExpression.setText("");
+        } else {
+            tvMathExpression.setText(tvMathExpression.getText() + resCalculated);
+        }
     }
 }

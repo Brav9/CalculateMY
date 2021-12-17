@@ -10,8 +10,8 @@ public enum Symbol {
     SIX,
     SEVEN,
     EIGHT,
-    NINE;
-
-
+    NINE,
+    COMMA,
+    PLUS_MINUS
 }
 
