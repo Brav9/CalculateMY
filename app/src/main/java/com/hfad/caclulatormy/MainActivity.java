@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
             @Override
             public void onClick(View v) {
 
-                myMVPPresenter.onButtonWasClickedZero();
+                myMVPPresenter.onButtonWasClicked(Symbol.ZERO);
 
                 // tvMathExpression.setText(tvMathExpression.getText() + "0");
             }
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
         btnOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myMVPPresenter.onButtonWasClickedOne();
+                myMVPPresenter.onButtonWasClicked(Symbol.ONE);
                 //tvMathExpression.setText(tvMathExpression.getText() + "1");
             }
         });
@@ -85,14 +85,15 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
         btnTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myMVPPresenter.onButtonWasClickedTwo();
+                myMVPPresenter.onButtonWasClicked(Symbol.TWO);
                 //tvMathExpression.setText(tvMathExpression.getText() + "2");
             }
         });
+
         btnTree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myMVPPresenter.onButtonWasClickedTree();
+                myMVPPresenter.onButtonWasClicked(Symbol.TREE);
                 //tvMathExpression.setText(tvMathExpression.getText() + "3");
             }
         });
@@ -100,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
         btnFour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myMVPPresenter.onButtonWasClickedFour();
+                myMVPPresenter.onButtonWasClicked(Symbol.FOUR);
                 //tvMathExpression.setText(tvMathExpression.getText() + "4");
             }
         });
@@ -108,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
         btnFive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myMVPPresenter.onButtonWasClickedFive();
+                myMVPPresenter.onButtonWasClicked(Symbol.FIVE);
                 //tvMathExpression.setText(tvMathExpression.getText() + "5");
             }
         });
@@ -116,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
         btnSix.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myMVPPresenter.onButtonWasClickedSix();
+                myMVPPresenter.onButtonWasClicked(Symbol.SIX);
                 //tvMathExpression.setText(tvMathExpression.getText() + "6");
             }
         });
@@ -124,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
         btnSeven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myMVPPresenter.onButtonWasClickedSeven();
+                myMVPPresenter.onButtonWasClicked(Symbol.SEVEN);
                 //tvMathExpression.setText(tvMathExpression.getText() + "7");
             }
         });
@@ -132,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
         btnEight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myMVPPresenter.onButtonWasClickedEight();
+                myMVPPresenter.onButtonWasClicked(Symbol.EIGHT);
                 //tvMathExpression.setText(tvMathExpression.getText() + "8");
             }
         });
@@ -140,7 +141,7 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
         btnNine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myMVPPresenter.onButtonWasClickedNine();
+                myMVPPresenter.onButtonWasClicked(Symbol.NINE);
                 //tvMathExpression.setText(tvMathExpression.getText() + "9");
             }
         });

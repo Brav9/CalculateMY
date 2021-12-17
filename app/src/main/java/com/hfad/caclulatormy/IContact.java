@@ -14,16 +14,18 @@ public interface IContact {
     interface IModel {
         void updateInfo();
 
-        String inputNumberZero();
-        String inputNumberOne();
-        String inputNumberTwo();
-        String inputNumberTree();
-        String inputNumberFour();
-        String inputNumberFive();
-        String inputNumberSix();
-        String inputNumberSeven();
-        String inputNumberEight();
-        String inputNumberNine();
+        String inputSymbol(Symbol symbol);
+
+        // String inputNumberZero();
+       // String inputNumberOne();
+        //String inputNumberTwo();
+        //String inputNumberTree();
+        //String inputNumberFour();
+        //String inputNumberFive();
+        //String inputNumberSix();
+       // String inputNumberSeven();
+        //String inputNumberEight();
+        //String inputNumberNine();
 
         String calculate();
 
@@ -31,16 +33,18 @@ public interface IContact {
 
     interface IPresenter {
 
-        void onButtonWasClickedZero();
-        void onButtonWasClickedOne();
-        void onButtonWasClickedTwo();
-        void onButtonWasClickedTree();
-        void onButtonWasClickedFour();
-        void onButtonWasClickedFive();
-        void onButtonWasClickedSix();
-        void onButtonWasClickedSeven();
-        void onButtonWasClickedEight();
-        void onButtonWasClickedNine();
+        void onButtonWasClicked(Symbol symbol);
+
+      //  void onButtonWasClickedZero();
+       // void onButtonWasClickedOne();
+       // void onButtonWasClickedTwo();
+       // void onButtonWasClickedTree();
+       // void onButtonWasClickedFour();
+       // void onButtonWasClickedFive();
+       // void onButtonWasClickedSix();
+      //  void onButtonWasClickedSeven();
+      //  void onButtonWasClickedEight();
+      //  void onButtonWasClickedNine();
 
         void selectionSymbol();
 
