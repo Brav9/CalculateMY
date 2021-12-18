@@ -6,6 +6,8 @@ public class Presenter implements IContact.IPresenter {
     IContact.IView myMVPView;
     IContact.IModel myMVPModel;
 
+    String currentText; //то, что сейчас видно на экране
+
     public Presenter(IContact.IView myMVPView) {
         this.myMVPView = myMVPView;
         this.myMVPModel = new Model();
@@ -20,8 +22,8 @@ public class Presenter implements IContact.IPresenter {
 
     @Override
     public void onButtonWasClickedOperation(Operation operation) {
-        String operationSymbol = myMVPModel.inputOperation(operation);
-        myMVPView.showNumber(operationSymbol);
+        String number = myMVPModel.inputOperation(operation);
+        myMVPView.showNumber(number);
     }
 
 

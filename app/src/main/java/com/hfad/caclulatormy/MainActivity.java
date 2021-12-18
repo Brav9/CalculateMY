@@ -139,115 +139,131 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
         btnC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myMVPPresenter.onButtonWasClicked(Symbol.CLEAN);
+                myMVPPresenter.onButtonWasClickedOperation(Operation.CLEAN);
             }
         });
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                text = tvMathExpression.getText();
-                if (text.length() > 0) {
-                    int lastCharPosition = text.length();
-                    CharSequence newText = text.subSequence(0, lastCharPosition - 1);
-                    tvMathExpression.setText(newText);
-                    myMVPPresenter.onButtonWasClickedOperation(Operation.BACK);
-                }
-                //     int lastCharPosition = text.length();
-                //     CharSequence newText = text.subSequence(0, lastCharPosition - 1);
-                //     tvMathExpression.setText(newText);
-                //}
-            }
-        });
-
-        btnDivision.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mathValueOne = Float.parseFloat(tvMathExpression.getText() + "");
-                operation = Operation.DIVISION;
-                tvMathExpression.setText(null);
-            }
-        });
-
-        btnMultiplication.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mathValueOne = Float.parseFloat(tvMathExpression.getText() + "");
-                operation = Operation.MULTIPLICATION;
-                tvMathExpression.setText(null);
-            }
-        });
-
-        btnSubtraction.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mathValueOne = Float.parseFloat(tvMathExpression.getText() + "");
-                operation = Operation.SUBTRACTION;
-                tvMathExpression.setText(null);
-            }
-        });
-
-        btnAddition.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (tvMathExpression == null) {
-                    tvMathExpression.setText("");
-                } else {
-                    mathValueOne = Float.parseFloat(tvMathExpression.getText() + "");
-                    operation = Operation.ADDICTION;
-                    tvMathExpression.setText(null);
-                }
-            }
-        });
-
-        btnEqual.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mathValueTwo = Float.parseFloat(tvMathExpression.getText() + "");
-
-                switch (operation) {
-                    case ADDICTION:
-                        tvMathExpression.setText(mathValueOne + mathValueTwo + "");
-                        break;
-                    case DIVISION:
-                        tvMathExpression.setText(mathValueOne / mathValueTwo + "");
-                        break;
-                    case MULTIPLICATION:
-                        tvMathExpression.setText(mathValueOne * mathValueTwo + "");
-                        break;
-                    case SUBTRACTION:
-                        tvMathExpression.setText(mathValueOne - mathValueTwo + "");
-                        break;
-                }
-                operation = null;
-            }
-        });
+                myMVPPresenter.onButtonWasClicked(Symbol.BACK);
+//                text = tvMathExpression.getText();
+//                if (text.length() > 0) {
+//                    int lastCharPosition = text.length();
+//                    CharSequence newText = text.subSequence(0, lastCharPosition - 1);
+//                    tvMathExpression.setText(newText);
 
 
-        btnComma.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                myMVPPresenter.onButtonWasClicked(Symbol.COMMA);
+            //     int lastCharPosition = text.length();
+            //     CharSequence newText = text.subSequence(0, lastCharPosition - 1);
+            //     tvMathExpression.setText(newText);
+            //}
+        }
+    });
 
-            }
-        });
+        btnDivision.setOnClickListener(new View.OnClickListener()
 
-        btnPlusMinus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                myMVPPresenter.onButtonWasClicked(Symbol.PLUS_MINUS);
+    {
+        @Override
+        public void onClick (View v){
+        mathValueOne = Float.parseFloat(tvMathExpression.getText() + "");
+        operation = Operation.DIVISION;
+        tvMathExpression.setText(null);
+    }
+    });
 
-                float value = Float.parseFloat(tvMathExpression.getText().toString());
-                if (value < 0) {
-                    value = Math.abs(value);
-                } else if (value > 0) {
-                    value = value * -1;
-                }
-                tvMathExpression.setText(String.valueOf(value));
-            }
-        });
+        btnMultiplication.setOnClickListener(new View.OnClickListener()
+
+    {
+        @Override
+        public void onClick (View v){
+        mathValueOne = Float.parseFloat(tvMathExpression.getText() + "");
+        operation = Operation.MULTIPLICATION;
+        tvMathExpression.setText(null);
+    }
+    });
+
+        btnSubtraction.setOnClickListener(new View.OnClickListener()
+
+    {
+        @Override
+        public void onClick (View v){
+        mathValueOne = Float.parseFloat(tvMathExpression.getText() + "");
+        operation = Operation.SUBTRACTION;
+        tvMathExpression.setText(null);
+    }
+    });
+
+        btnAddition.setOnClickListener(new View.OnClickListener()
+
+    {
+        @Override
+        public void onClick (View v){
+        if (tvMathExpression == null) {
+            tvMathExpression.setText("");
+        } else {
+            mathValueOne = Float.parseFloat(tvMathExpression.getText() + "");
+            operation = Operation.ADDICTION;
+            tvMathExpression.setText(null);
+        }
+    }
+    });
+
+        btnEqual.setOnClickListener(new View.OnClickListener()
+
+    {
+        @Override
+        public void onClick (View v){
+        myMVPPresenter.onButtonWasClickedOperation(Operation.EQUAL);
+//                mathValueTwo = Float.parseFloat(tvMathExpression.getText() + "");
+//
+//                switch (operation) {
+//                    case ADDICTION:
+//                        tvMathExpression.setText(mathValueOne + mathValueTwo + "");
+//                        break;
+//                    case DIVISION:
+//                        tvMathExpression.setText(mathValueOne / mathValueTwo + "");
+//                        break;
+//                    case MULTIPLICATION:
+//                        tvMathExpression.setText(mathValueOne * mathValueTwo + "");
+//                        break;
+//                    case SUBTRACTION:
+//                        tvMathExpression.setText(mathValueOne - mathValueTwo + "");
+//                        break;
+//                }
+//                operation = null;
+    }
+    });
+
+
+        btnComma.setOnClickListener(new View.OnClickListener()
+
+    {
+        @Override
+        public void onClick (View v){
+        myMVPPresenter.onButtonWasClicked(Symbol.COMMA);
 
     }
+    });
+
+        btnPlusMinus.setOnClickListener(new View.OnClickListener()
+
+    {
+        @Override
+        public void onClick (View v){
+        myMVPPresenter.onButtonWasClicked(Symbol.PLUS_MINUS);
+
+//                float value = Float.parseFloat(tvMathExpression.getText().toString());
+//                if (value < 0) {
+//                    value = Math.abs(value);
+//                } else if (value > 0) {
+//                    value = value * -1;
+//                }
+//                tvMathExpression.setText(String.valueOf(value));
+    }
+    });
+
+}
 
     @Override
     public void showError() {
@@ -260,11 +276,7 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
 
     @Override
     public void showNumber(String resCalculated) {
-        if (resCalculated.equals("")) {
-            tvMathExpression.setText("");
-        } else {
-            tvMathExpression.setText(tvMathExpression.getText() + resCalculated);
-        }
+        tvMathExpression.setText(resCalculated);
     }
 
     @Override

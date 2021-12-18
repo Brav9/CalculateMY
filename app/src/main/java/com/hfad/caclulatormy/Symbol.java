@@ -13,6 +13,6 @@ public enum Symbol {
     NINE,
     COMMA,
     PLUS_MINUS,
-    CLEAN
+    BACK
 }
 

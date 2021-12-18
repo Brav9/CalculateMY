@@ -18,6 +18,7 @@ public interface IContact {
 
         String inputSymbol(Symbol symbol);
         String inputOperation(Operation operation);
+        String getResult();
 
 
     }
