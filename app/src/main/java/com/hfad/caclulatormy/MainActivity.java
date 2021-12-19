@@ -168,10 +168,6 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
             @Override
             public void onClick(View v) {
                 myMVPPresenter.onButtonWasClickedOperation(Operation.DIVISION);
-
-//                mathValueOne = Float.parseFloat(tvMathExpression.getText() + "");
-//                operation = Operation.DIVISION;
-//                tvMathExpression.setText(null);
             }
         });
 
@@ -179,9 +175,6 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
             @Override
             public void onClick(View v) {
                 myMVPPresenter.onButtonWasClickedOperation(Operation.MULTIPLICATION);
-//                mathValueOne = Float.parseFloat(tvMathExpression.getText() + "");
-//                operation = Operation.MULTIPLICATION;
-//                tvMathExpression.setText(null);
             }
         });
 
@@ -189,9 +182,6 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
             @Override
             public void onClick(View v) {
                 myMVPPresenter.onButtonWasClickedOperation(Operation.SUBTRACTION);
-//                mathValueOne = Float.parseFloat(tvMathExpression.getText() + "");
-//                operation = Operation.SUBTRACTION;
-//                tvMathExpression.setText(null);
             }
         });
 
@@ -213,50 +203,12 @@ public class MainActivity extends AppCompatActivity implements IContact.IView {
             @Override
             public void onClick(View v) {
                 myMVPPresenter.onButtonWasClickedOperation(Operation.EQUAL);
-//                mathValueTwo = Float.parseFloat(tvMathExpression.getText() + "");
-//
-//                switch (operation) {
-//                    case ADDICTION:
-//                        tvMathExpression.setText(mathValueOne + mathValueTwo + "");
-//                        break;
-//                    case DIVISION:
-//                        tvMathExpression.setText(mathValueOne / mathValueTwo + "");
-//                        break;
-//                    case MULTIPLICATION:
-//                        tvMathExpression.setText(mathValueOne * mathValueTwo + "");
-//                        break;
-//                    case SUBTRACTION:
-//                        tvMathExpression.setText(mathValueOne - mathValueTwo + "");
-//                        break;
-//                }
-//                operation = null;
             }
         });
-
-
-    }
-
-    @Override
-    public void showError() {
-    }
-
-    @Override
-    public void hideError() {
-
     }
 
     @Override
     public void showNumber(String resCalculated) {
         tvMathExpression.setText(resCalculated);
-    }
-
-    @Override
-    public void showOperation() {
-
-    }
-
-    @Override
-    public void showResult() {
-
     }
 }

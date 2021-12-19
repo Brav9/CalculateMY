@@ -12,11 +12,6 @@ public class Model implements IContact.IModel {
     private Operation operation = null;
 
     @Override
-    public void updateInfo() {
-
-    }
-
-    @Override
     public String inputSymbol(Symbol symbol) {
         //Работаем с первым числом
         if (isFirstValueEdit) {
