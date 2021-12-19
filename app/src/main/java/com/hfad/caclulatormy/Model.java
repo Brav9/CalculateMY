@@ -1,16 +1,14 @@
 package com.hfad.caclulatormy;
 
 import static com.hfad.caclulatormy.Operation.CLEAN;
+import static com.hfad.caclulatormy.Operation.EQUAL;
 
 public class Model implements IContact.IModel {
 
     private String firstValue;
     private String secondValue;
-    private  String number;
-    CharSequence newValue;
 
     private boolean isFirstValueEdit = true;
-
     private Operation operation = null;
 
     @Override
@@ -20,21 +18,30 @@ public class Model implements IContact.IModel {
 
     @Override
     public String inputSymbol(Symbol symbol) {
+        //Работаем с первым числом
         if (isFirstValueEdit) {
             if (firstValue == null) {
                 firstValue = recognizeSymbol(symbol);
-            } else if (symbol == Symbol.BACK){
+            } else if (symbol == Symbol.BACK) {
                 firstValue = recognizeSymbol(symbol);
-            } else  {
+            } else if (symbol == Symbol.PLUS_MINUS) {
+                firstValue = recognizeSymbol(symbol);
+
+            } else {
                 firstValue = firstValue + recognizeSymbol(symbol);
             }
             return firstValue;
-            //Работаем с первым числом
-            //TODO если символ Удалить - то здесть очищаем firstValue
-        }
-        else {
             //Работаем со вторым числом
-            secondValue = secondValue + recognizeSymbol(symbol);
+        } else {
+            if (secondValue == null) {
+                secondValue = recognizeSymbol(symbol);
+            } else if (symbol == Symbol.BACK) {
+                secondValue = recognizeSymbol(symbol);
+            } else if (symbol == Symbol.PLUS_MINUS) {
+                secondValue = recognizeSymbol(symbol);
+            } else {
+                secondValue = secondValue + recognizeSymbol(symbol);
+            }
             return secondValue;
         }
     }
@@ -42,29 +49,19 @@ public class Model implements IContact.IModel {
     private String recognizeSymbol(Symbol symbol) {
         switch (symbol) {
             case BACK:
-                if (firstValue.isEmpty()) {
-                    return "";
+                if (isFirstValueEdit) {
+                    if (firstValue.isEmpty()) {
+                        return "";
+                    } else {
+                        return firstValue.substring(0, firstValue.length() - 1);
+                    }
                 } else {
-
-                    return firstValue.substring(0, firstValue.length() - 1);
-
+                    if (secondValue.isEmpty()) {
+                        return "";
+                    } else {
+                        return secondValue.substring(0, secondValue.length() - 1);
+                    }
                 }
-
-
-//                if (firstValue.length() > 0) {
-//                    int lastCharPosition = firstValue.length();
-//                    newValue = firstValue.subSequence(0, lastCharPosition - 1);
-//                    this.firstValue = "";
-//
-//                    return String.valueOf(newValue);
-//                }
-
-
-               // text = tvMathExpression.getText();
-//                if (text.length() > 0) {
-//                    int lastCharPosition = text.length();
-//                    CharSequence newText = text.subSequence(0, lastCharPosition - 1);
-//                    tvMathExpression.setText(newText);
             case COMMA:
                 return ".";
             case ZERO:
@@ -88,21 +85,31 @@ public class Model implements IContact.IModel {
             case NINE:
                 return "9";
             case PLUS_MINUS:
-                float firstValueFloat = Float.parseFloat(firstValue);
-                if (firstValueFloat < 0) {
-                    firstValueFloat = Math.abs(firstValueFloat);
-                    firstValue = "";
-                } else if (firstValueFloat > 0) {
-                    firstValueFloat = firstValueFloat * -1;
-                    firstValue = "";
+                if (isFirstValueEdit) {
+                    float firstValueFloat = Float.parseFloat(firstValue);
+                    if (firstValueFloat < 0) {
+                        firstValueFloat = Math.abs(firstValueFloat);
+                        firstValue = "";
+                    } else if (firstValueFloat > 0) {
+                        firstValueFloat = firstValueFloat * -1;
+                        firstValue = "";
+                    }
+                    return String.valueOf(firstValueFloat);
+                } else {
+                    float secondValueFloat = Float.parseFloat(secondValue);
+                    if (secondValueFloat < 0) {
+                        secondValueFloat = Math.abs(secondValueFloat);
+                        secondValue = "";
+                    } else if (secondValueFloat > 0) {
+                        secondValueFloat = secondValueFloat * -1;
+                        firstValue = "";
+                    }
+                    return String.valueOf(secondValueFloat);
                 }
-
-                return String.valueOf(firstValueFloat);//TODO
             default:
                 return "";
-        } //return null;
+        }
     }
-
 
     @Override
     public String inputOperation(Operation operation) {
@@ -112,37 +119,33 @@ public class Model implements IContact.IModel {
             secondValue = "";
             this.operation = null;
             return firstValue;
+        } else if (operation == EQUAL) {
+            return getResult();
         } else {
-            //secondValue = "";
+            secondValue = "";
             this.operation = operation;
             isFirstValueEdit = false;
             return secondValue;
         }
-
     }
 
     @Override
     public String getResult() {
 
+        float a = Float.parseFloat(firstValue);
+        float b = Float.parseFloat(secondValue);
+
+        switch (operation) {
+            case MULTIPLICATION:
+                return String.valueOf(a * b);
+            case SUBTRACTION:
+                return String.valueOf(a - b);
+            case DIVISION:
+                return String.valueOf(a / b);
+            case ADDICTION:
+                return String.valueOf(a + b);
+        }
         return null;
     }
-
-//    switch (operation) {
-//        case ADDICTION:
-//            tvMathExpression.setText(mathValueOne + mathValueTwo + "");
-//            break;
-//        case DIVISION:
-//            tvMathExpression.setText(mathValueOne / mathValueTwo + "");
-//            break;
-//        case MULTIPLICATION:
-//            tvMathExpression.setText(mathValueOne * mathValueTwo + "");
-//            break;
-//        case SUBTRACTION:
-//            tvMathExpression.setText(mathValueOne - mathValueTwo + "");
-//            break;
-//    }
-//    operation = null;
-
-    //TODO public String getResult - через свитч берешь операцию и накладываешь на firstValue and secondValue и возвращаешь результат
 }
 
