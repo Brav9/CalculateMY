@@ -136,7 +136,6 @@ public class Model implements IContact.IModel {
                 this.operation = null;
                 isFirstValueEdit = true;
                 return String.valueOf(a * b);
-
             case SUBTRACTION:
                 firstValue = "";
                 secondValue = "";
