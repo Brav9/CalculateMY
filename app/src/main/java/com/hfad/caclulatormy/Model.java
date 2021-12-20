@@ -21,7 +21,6 @@ public class Model implements IContact.IModel {
                 firstValue = recognizeSymbol(symbol);
             } else if (symbol == Symbol.PLUS_MINUS) {
                 firstValue = recognizeSymbol(symbol);
-
             } else {
                 firstValue = firstValue + recognizeSymbol(symbol);
             }
@@ -97,7 +96,7 @@ public class Model implements IContact.IModel {
                         secondValue = "";
                     } else if (secondValueFloat > 0) {
                         secondValueFloat = secondValueFloat * -1;
-                        firstValue = "";
+                        secondValue = "";
                     }
                     return String.valueOf(secondValueFloat);
                 }
@@ -132,12 +131,29 @@ public class Model implements IContact.IModel {
 
         switch (operation) {
             case MULTIPLICATION:
+                firstValue = "";
+                secondValue = "";
+                this.operation = null;
+                isFirstValueEdit = true;
                 return String.valueOf(a * b);
+
             case SUBTRACTION:
+                firstValue = "";
+                secondValue = "";
+                this.operation = null;
+                isFirstValueEdit = true;
                 return String.valueOf(a - b);
             case DIVISION:
+                firstValue = "";
+                secondValue = "";
+                this.operation = null;
+                isFirstValueEdit = true;
                 return String.valueOf(a / b);
             case ADDICTION:
+                firstValue = "";
+                secondValue = "";
+                this.operation = null;
+                isFirstValueEdit = true;
                 return String.valueOf(a + b);
         }
         return null;
